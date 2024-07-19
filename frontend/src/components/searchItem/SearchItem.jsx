@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import React from 'react'
 import "./searchItem.css"
 const SearchItem = ({item}) => {
+    const defaultImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFgmQbkQQXg5sdyGhxNKkMJ71_7ig_6de3VQ&s"; // URL of the default image
+
   return (
     <div className='searchItem'>
-        <img src={item.photos[0]}
+      <img src={item.photos && item.photos.length > 0 ? item.photos[0] : defaultImage}
          alt="" 
          className='siImg'/>
         <div className="siDesc">
